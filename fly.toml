@@ -1,0 +1,14 @@
+kill_signal = "SIGTERM"
+kill_timeout = 120
+
+[[services]]
+  internal_port = 1688
+  protocol = "tcp"
+
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+    type = "connections"
+
+  [[services.ports]]
+    port = 1688
