@@ -1,14 +1,18 @@
 kill_signal = "SIGTERM"
-kill_timeout = 120
+kill_timeout = "2m0s"
 
 [[services]]
-  internal_port = 1688
   protocol = "tcp"
-
-  [services.concurrency]
-    hard_limit = 25
-    soft_limit = 20
-    type = "connections"
+  internal_port = 1688
 
   [[services.ports]]
     port = 1688
+  [services.concurrency]
+    type = "connections"
+    hard_limit = 25
+    soft_limit = 20
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 256
