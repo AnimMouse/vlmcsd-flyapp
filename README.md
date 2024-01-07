@@ -1,19 +1,27 @@
 # vlmcsd on fly.io
 [vlmcsd KMS Emulator](https://github.com/kkkgo/vlmcsd) on [fly.io](https://fly.io)
 
-Run your own KMS Emulator server for free (within free tier) on fly.io
+Run your own KMS Emulator server ~~for free (within free tier)~~ on fly.io
+
+> [!IMPORTANT]
+> On 2024, fly.io will now charge $2/mo for a dedicated IPv4 address.
 
 Activate your Windows and Microsoft Office via KMS without leaving traces of activator in your PC.
 
+> [!TIP]
+> With the introduction of Ohook activation method on Microsoft Office, hosting your own KMS Emulator is not needed anymore.
+
 ## fly.io Deployment
-You need [flyctl](https://github.com/superfly/flyctl)
+You need [flyctl](https://github.com/superfly/flyctl) installed.
 
 1. Clone this repository.
-2. Check if vlmcsd version in Dockerfile is latest, if not, change to the latest version.
-3. Create an app on fly.io `fly launch --copy-config --name app-name --no-deploy`.
-4. Select the region closest to you.
-5. Deploy to fly.io `fly deploy -a app-name --remote-only`.
-6. Test vlmcsd using vlmcs. `vlmcs -v app-name.fly.dev`
+2. Check if vlmcsd version in `Dockerfile` is latest, if not, change to the latest version.
+3. Login to flyctl by using `fly auth login`.
+4. Create an app on fly.io `fly launch --copy-config --name app-name --no-deploy --vm-memory 256`.
+5. When asked to tweak these settings before proceeding, enter yes if you want to tweak settings like selecting the region closest to you, otherwise, enter no.
+6. Deploy to fly.io `fly deploy -a app-name --ha=false`.
+7. When asked to allocate a dedicated IPv4 address, enter yes.
+8. Test vlmcsd using vlmcs. `vlmcs -v app-name.fly.dev`
 
 It is recommended to have a custom domain name.
 
