@@ -1,10 +1,10 @@
 # vlmcsd on fly.io
 [vlmcsd KMS Emulator](https://github.com/kkkgo/vlmcsd) on [fly.io](https://fly.io)
 
-Run your own KMS Emulator server ~~for free (within free tier)~~ on fly.io
+Run your own KMS Emulator server for free (within free tier) on fly.io
 
-> [!IMPORTANT]
-> On 2024, fly.io will now charge $2/mo for a dedicated IPv4 address.
+> [!NOTE]
+> On 2024, fly.io will now charge $2/mo for a dedicated IPv4 address, but everything under $5 bill monthly is waved, so if you have 2 or fewer dedicated IPv4, it is still free.
 
 Activate your Windows and Microsoft Office via KMS without leaving traces of activator in your PC.
 
